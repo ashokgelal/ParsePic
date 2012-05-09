@@ -26,7 +26,7 @@
                                     <navigationItem title="Photos" id="IRg-Yk-NWl">
                                         <barButtonItem key="leftBarButtonItem" systemItem="camera" id="vde-L6-M2x">
                                             <connections>
-                                                <action selector="uploadImage:" destination="2" id="yg3-Sv-v3H"/>
+                                                <action selector="cameraButtonTapped:" destination="2" id="KvK-4K-Dup"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="nHf-x7-53F">
@@ -51,6 +51,7 @@
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
+                <relationship kind="action" name="cameraButtonTapped:" candidateClass="UIBarButtonItem"/>
                 <relationship kind="action" name="refresh:" candidateClass="UIBarButtonItem"/>
                 <relationship kind="action" name="uploadImage:" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="photoScrollView" candidateClass="UIScrollView"/>

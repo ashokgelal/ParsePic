@@ -1,13 +1,10 @@
 //
-//  ViewController.h
-//  ParsePic
-//
-//  Created by Ashok Gelal on 5/9/12.
 //  Copyright (c) 2012 Ashok Gelal. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, PF_MBProgressHUDDelegate>
 
 @end
