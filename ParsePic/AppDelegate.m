@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <Parse/Parse.h>
 
 @implementation AppDelegate
 
@@ -15,6 +16,29 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [Parse setApplicationId:@"" 
+                  clientKey:@""];    
+    
+    if([[NSUserDefaults standardUserDefaults] objectForKey:@"objectIDArray"]){
+        [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"objectIDArray"];         
+    }
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    
+    PFUser *currentUser = [PFUser currentUser];
+    
+    if(!currentUser){
+        PFUser *user = [PFUser user];
+        user.username = @"Ashok";
+        user.password = @"password";
+        user.email = @"ashokgelal@example.com";
+        
+        [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if(error){
+                [PFUser logInWithUsername:@"Ashok" password:@"password"];
+            }
+        }];
+    }
     return YES;
 }
 							

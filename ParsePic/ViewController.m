@@ -1,18 +1,18 @@
 //
-//  ViewController.m
-//  ParsePic
-//
-//  Created by Ashok Gelal on 5/9/12.
 //  Copyright (c) 2012 Ashok Gelal. All rights reserved.
 //
 
 #import "ViewController.h"
 
 @interface ViewController ()
+- (IBAction)refresh:(UIBarButtonItem *)sender;
+- (IBAction)uploadImage:(UIBarButtonItem *)sender;
+@property (weak, nonatomic) IBOutlet UIScrollView *photoScrollView;
 
 @end
 
 @implementation ViewController
+@synthesize photoScrollView = _photoScrollView;
 
 - (void)viewDidLoad
 {
@@ -22,6 +22,7 @@
 
 - (void)viewDidUnload
 {
+    [self setPhotoScrollView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -31,4 +32,9 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+- (IBAction)refresh:(UIBarButtonItem *)sender {
+}
+
+- (IBAction)uploadImage:(UIBarButtonItem *)sender {
+}
 @end
